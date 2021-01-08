@@ -1,3 +1,3 @@
-# Arch Linux
+# ArchLinux
 
 This script install ArchLinux
