@@ -57,12 +57,12 @@ swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
 echo 'Выбор зеркал для загрузки.'
-read -p "1 - archlinux.ip-connect.vn.ua, 2 - mirohost.net, 3 - nix.org.ua:" vm_setting
-if [[ $vm_setting == 1 ]]; then
+read -p "1 - archlinux.ip-connect.vn.ua, 2 - mirohost.net, 3 - nix.org.ua:" mirrors_setting
+if   [[ $mirrors_setting == 1 ]]; then
   echo "Server = http://archlinux.ip-connect.vn.ua/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
-elif [[ $vm_setting == 2 ]]; then
+elif [[ $mirrors_setting == 2 ]]; then
   echo "Server = http://mirror.mirohost.net/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
-elif [[ $vm_setting == 3 ]]; then
+elif [[ $mirrors_setting == 3 ]]; then
   echo "Server = http://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 fi
 
