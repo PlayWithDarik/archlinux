@@ -32,10 +32,10 @@ echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'Ставим программу для Wi-fi'
-read -p "1 - Да, 0 - Нет: " vm_setting
-if [[ $vm_setting == 0 ]]; then
+read -p "1 - Да, 0 - Нет: " wifi_setting
+if   [[ $wifi_setting == 0 ]]; then
   echo 'Пропущенно'
-elif [[ $vm_setting == 1 ]]; then
+elif [[ $wifi_setting == 1 ]]; then
   pacman -S dialog wpa_supplicant --noconfirm
 fi
 
