@@ -2,5 +2,5 @@
 
 This script install ArchLinux
 
-1 -
+pfi - git.io/JtvPD
 install - git.io/JtvPw
