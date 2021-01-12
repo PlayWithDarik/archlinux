@@ -6,6 +6,8 @@ pfi - git.io/JtvPD |
 install - git.io/JtvPw
 
 # Установка
- ```bash 
+ ```bash
+   pacman -Sy
+   pacman -S wget
    wget git.io/JtvPD && sh JtvPD
    ```
