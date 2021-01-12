@@ -72,4 +72,4 @@ pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
 echo 'Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt sh -c "$(curl -fsSL git.io/JkL2q)"
+arch-chroot /mnt sh -c "$(curl -fsSL git.io/JtvPw)"
