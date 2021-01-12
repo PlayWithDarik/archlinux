@@ -32,7 +32,12 @@ echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'Ставим программу для Wi-fi'
-pacman -S dialog wpa_supplicant --noconfirm 
+read -p "1 - Да, 0 - Нет: " vm_setting
+if [[ $vm_setting == 0 ]]; then
+  echo 'Пропущенно'
+elif [[ $vm_setting == 1 ]]; then
+  pacman -S dialog wpa_supplicant --noconfirm
+fi
 
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
@@ -75,8 +80,10 @@ elif [[ $de_setting == 4 ]]; then
 fi
 
 echo 'Выбираем DM'
-read -p "1 - LIGHTDM, 2 - SDDM, 3 - GDM:" dm_setting
-if   [[ $dm_setting == 1 ]]; then
+read -p "0 - Пропустить, 1 - LIGHTDM, 2 - SDDM, 3 - GDM:" dm_setting
+if   [[ $dm_setting == 0 ]]; then
+  echo 'Пропущенно'
+elif [[ $dm_setting == 1 ]]; then
   pacman -S lightdm lightdm-gtk-greeter-settings lightdm-gtk-greeter --noconfirm
   systemctl enable lightdm.service -f
 elif [[ $dm_setting == 2 ]]; then
