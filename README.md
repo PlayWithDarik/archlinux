@@ -11,3 +11,4 @@ install - git.io/JtvPw
    pacman -S wget
    wget git.io/JtvPD && sh JtvPD
    ```
+   i3 - https://git.io/JqTI7
