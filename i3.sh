@@ -52,7 +52,7 @@ echo 'Ставим Xorg и драйвера'
 pacman -S xorg-server xorg-drivers xorg-xinit
 
 echo "Устанавливаем I3 WM"
-pacman -S i3-wm
+pacman -S i3-wm dmenu
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
