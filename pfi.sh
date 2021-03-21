@@ -22,7 +22,7 @@ echo 'Создание разделов'
   echo;
   echo;
   echo;
-  echo +8G;
+  echo +45G;
 
   echo n;
   echo;
