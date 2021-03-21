@@ -80,18 +80,18 @@ elif [[ $de_setting == 4 ]]; then
 fi
 
 echo 'Выбираем DM'
-read -p "0 - Пропустить, 1 - LIGHTDM, 2 - SDDM, 3 - GDM:" dm_setting
+read -p "0 - Пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM:" dm_setting
 if   [[ $dm_setting == 0 ]]; then
   echo 'Пропущенно'
 elif [[ $dm_setting == 1 ]]; then
   pacman -S lightdm lightdm-gtk-greeter-settings lightdm-gtk-greeter --noconfirm
   systemctl enable lightdm.service -f
 elif [[ $dm_setting == 2 ]]; then
-  pacman -S sddm sddm-kcm --noconfirm
-  systemctl enable sddm.service -f
-elif [[ $dm_setting == 3 ]]; then
   pacman -S gdm --noconfirm
   systemctl enable gdm.service -f
+elif [[ $dm_setting == 3 ]]; then 
+  pacman -S sddm sddm-kcm --noconfirm
+  systemctl enable sddm.service -f
 fi
 
 echo 'Ставим шрифты'
