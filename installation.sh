@@ -1,6 +1,6 @@
 #!/bin/bash
 read -p "Введите имя компьютера: " hostname
-read -p "Введите имя пользователя: " username
+read -p "Введите имя пользователя (только маленькие лат. буквы): " username
 
 echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
