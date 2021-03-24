@@ -8,7 +8,7 @@ setfont cyr-sun16
 echo 'Синхронизация системных часов'
 timedatectl set-ntp true
 
-echo 'Создание разделов SSD'
+echo 'Создание разделов'
 (
   echo o;
 
@@ -49,7 +49,7 @@ echo 'HDD'
   echo;
   echo;
   
-   echo w;
+  echo w;
 ) | fdisk /dev/sdb
 
 echo 'Ваша разметка диска'
@@ -59,14 +59,14 @@ echo 'Форматирование дисков'
 mkfs.ext2  /dev/sda1 -L boot
 mkfs.ext4  /dev/sda2 -L root
 mkswap /dev/sda3 -L swap
-mkfs.ext4  /dev/sdb4 -L home
+mkfs.ext4  /dev/sdb -L home
 
 echo 'Монтирование дисков'
 mount /dev/sda2 /mnt
 mkdir /mnt/{boot,home}
 mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
-mount /dev/sdb4 /mnt/home
+mount /dev/sdb /mnt/home
 
 echo 'Выбор зеркал для загрузки.'
 read -p "1 - archlinux.ip-connect.vn.ua, 2 - mirohost.net, 3 - nix.org.ua:" mirrors_setting
