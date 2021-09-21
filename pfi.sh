@@ -22,28 +22,23 @@ echo 'Создание разделов'
   echo;
   echo;
   echo;
-  echo +75G;
+  echo +30G;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +8192M;
+  echo +1024M;
 
-  echo w;
-) | fdisk /dev/sda
-
-echo 'HDD'
-(
-  echo o;
-  
   echo n;
   echo p;
   echo;
   echo;
-  
+  echo a;
+  echo 1;
+
   echo w;
-) | fdisk /dev/sdb
+) | fdisk /dev/sda
 
 echo 'Ваша разметка диска'
 fdisk -l
