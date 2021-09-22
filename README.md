@@ -7,7 +7,6 @@ install - git.io/JtvPw
 
 # Установка
  ```bash
-   pacman -Sy
-   pacman -S wget
+   pacman -Sy wget
    wget git.io/JtvPD && sh JtvPD
    ```
