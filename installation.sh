@@ -68,7 +68,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo "Выбираем DE"
-read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(Lite), 5 - KDE(Full):" de_setting
+read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(Lite), 5 - KDE(Full): " de_setting
 if   [[ $de_setting == 1 ]]; then
   pacman -S xfce4 xfce4-goodies --noconfirm
 elif [[ $de_setting == 2 ]]; then
@@ -82,7 +82,7 @@ elif [[ $de_setting == 5 ]]; then
 fi
 
 echo 'Выбираем DM'
-read -p "0 - Пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM:" dm_setting
+read -p "0 - Пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
 if   [[ $dm_setting == 0 ]]; then
   echo 'Пропущенно'
 elif [[ $dm_setting == 1 ]]; then
@@ -98,7 +98,7 @@ fi
 
 
 echo 'Ставим AUR (yay)'
-read -p "1 - Да, 0 - Нет:" aur_install
+read -p "1 - Да, 0 - Нет: " aur_install
 if   [[ $aur_install == 0 ]]; then
   echo 'Пропущенно'
 elif [[ $aur_install == 1 ]]; then
