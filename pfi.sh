@@ -22,7 +22,7 @@ echo 'Создание разделов'
   echo;
   echo;
   echo;
-  echo +108G;
+  echo +30G;
 
   echo n;
   echo;
@@ -30,6 +30,10 @@ echo 'Создание разделов'
   echo;
   echo +1024M;
 
+  echo n;
+  echo p;
+  echo;
+  echo;
   echo a;
   echo 1;
 
@@ -43,17 +47,17 @@ echo 'Форматирование дисков'
 mkfs.ext2  /dev/sda1 -L boot
 mkfs.ext4  /dev/sda2 -L root
 mkswap /dev/sda3 -L swap
-mkfs.ext4  /dev/sdb -L home
+mkfs.ext4  /dev/sda4 -L home
 
 echo 'Монтирование дисков'
 mount /dev/sda2 /mnt
 mkdir /mnt/{boot,home}
 mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
-mount /dev/sdb /mnt/home
+mount /dev/sda4 /mnt/home
 
 echo 'Выбор зеркал для загрузки.'
-read -p "1 - archlinux.ip-connect.vn.ua, 2 - mirohost.net, 3 - nix.org.ua:, 4 - astra.in.ua, 5 - endpoint.ml" mirrors_setting
+read -p "1 - archlinux.ip-connect.vn.ua, 2 - mirohost.net, 3 - nix.org.ua, 4 - astra.in.ua, 5 - endpoint.ml:" mirrors_setting
 if   [[ $mirrors_setting == 1 ]]; then
   echo "Server = http://archlinux.ip-connect.vn.ua/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 elif [[ $mirrors_setting == 2 ]]; then
