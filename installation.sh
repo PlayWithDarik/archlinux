@@ -96,6 +96,22 @@ elif [[ $dm_setting == 3 ]]; then
   systemctl enable sddm.service -f
 fi
 
+
+echo 'Ставим AUR (yay)'
+read -p "1 - Да, 0 - Нет:" aur_install
+if   [[ $aur_install == 0 ]]; then
+  echo 'Пропущенно'
+elif [[ $aur_install == 1 ]]; then
+  cd /home/$username
+  pacman -S git --noconfirm
+  git clone https://aur.archlinux.org/yay.git
+  chown -R $username:users /home/$username/yay
+  chown -R $username:users /home/$username/yay/PKGBUILD 
+  cd /home/$username/yay  
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/yay
+fi
+
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
