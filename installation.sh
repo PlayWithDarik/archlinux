@@ -80,7 +80,7 @@ elif [[ $de_setting == 4 ]]; then
 elif [[ $de_setting == 5 ]]; then
   pacman -S plasma kde-applications --noconfirm
 elif [[ $de_setting == 6 ]]; then
-  pacman -S plasma konsole dolphin--noconfirm
+  pacman -S plasma konsole dolphin --noconfirm
 fi
 
 echo 'Выбираем DM'
