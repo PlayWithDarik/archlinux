@@ -76,13 +76,9 @@ elif [[ $de_setting == 2 ]]; then
 elif [[ $de_setting == 3 ]]; then
   pacman -S gnome gnome-extra --noconfirm
 elif [[ $de_setting == 4 ]]; then
-  pacman -S plasma-desktop konsole --noconfirm
+  pacman -S plasma-desktop konsole plasma-nm plasma-pa  --noconfirm
 elif [[ $de_setting == 5 ]]; then
   pacman -S plasma kde-applications --noconfirm
-elif [[ $de_setting == 6 ]]; then
-  pacman -S plasma konsole dolphin --noconfirm
-elif [[ $de_setting == 7 ]]; then
-  pacman -S openbox kitty --noconfirm
 fi
 
 echo 'Выбираем DM'
