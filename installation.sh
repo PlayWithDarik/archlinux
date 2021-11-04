@@ -68,7 +68,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo "Выбираем DE"
-read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(Lite), 5 - KDE(Full), 6 - KDE(Custom), 7 - OPENBOX: " de_setting
+read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(lite): " de_setting
 if   [[ $de_setting == 1 ]]; then
   pacman -S xfce4 xfce4-goodies --noconfirm
 elif [[ $de_setting == 2 ]]; then
@@ -76,9 +76,7 @@ elif [[ $de_setting == 2 ]]; then
 elif [[ $de_setting == 3 ]]; then
   pacman -S gnome gnome-extra --noconfirm
 elif [[ $de_setting == 4 ]]; then
-  pacman -S plasma-desktop konsole plasma-nm plasma-pa  --noconfirm
-elif [[ $de_setting == 5 ]]; then
-  pacman -S plasma kde-applications --noconfirm
+  pacman -S plasma-desktop konsole plasma-nm plasma-pa --noconfirm
 fi
 
 echo 'Выбираем DM'
