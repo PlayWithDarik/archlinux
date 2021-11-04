@@ -76,7 +76,7 @@ elif [[ $de_setting == 2 ]]; then
 elif [[ $de_setting == 3 ]]; then
   pacman -S gnome gnome-extra --noconfirm
 elif [[ $de_setting == 4 ]]; then
-  pacman -S plasma-desktop konsole plasma-nm plasma-pa --noconfirm
+  pacman -S plasma-desktop konsole plasma-nm plasma-pa packagekit-qt5 --noconfirm
 fi
 
 echo 'Выбираем DM'
