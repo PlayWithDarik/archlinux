@@ -79,7 +79,7 @@ pacman-key --populate archlinux
 pacman -Sy
 
 echo 'Установка основных пакетов'
-pacstrap /mnt base base-devel linux-zen linux-zen-headers zsh nano dhcpcd netctl e2fsprogs
+pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano dhcpcd netctl dbus e2fsprogs
 
 echo 'Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
