@@ -45,9 +45,9 @@ fdisk -l
 
 echo 'Форматирование дисков'
 mkfs.ext2  /dev/sda1 -L boot
-mkfs.btrfs  /dev/sda2 -L root
+mkfs.btrfs  /dev/sda2 -L -f root
 mkswap /dev/sda3 -L swap
-mkfs.btrfs  /dev/sda4 -L home
+mkfs.btrfs  /dev/sda4 -L -f home
 
 echo 'Монтирование дисков'
 mount /dev/sda2 /mnt
