@@ -74,7 +74,7 @@ Server = https://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch
 EOF
 
 echo 'Установка основных пакетов'
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl dbus e2fsprogs
+pacstrap /mnt base base-devel linux-zen linux-zen-headers nano dhcpcd netctl dbus e2fsprogs
 
 echo 'Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
