@@ -57,6 +57,7 @@ swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
 echo 'Зеркала для загрузки.'
+
 > /etc/pacman.d/mirrorlist
 cat <<EOF>> /etc/pacman.d/mirrorlist
 
