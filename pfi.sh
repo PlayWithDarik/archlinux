@@ -73,11 +73,6 @@ Server = https://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch
 
 EOF
 
-echo 'Активируем новые зеркала'
-pacman-key --init
-pacman-key --populate archlinux
-pacman -Sy
-
 echo 'Установка основных пакетов'
 pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano dhcpcd netctl dbus e2fsprogs
 
