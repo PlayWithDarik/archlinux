@@ -71,7 +71,7 @@ elif [[ $mirrors_setting == 5 ]]; then
 fi
 
 echo 'Установка основных пакетов'
-pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware zsh nano dhcpcd netctl btrfs-progs
+pacstrap /mnt base base-devel linux-zen linux-zen-headers zsh nano dhcpcd netctl btrfs-progs
 
 echo 'Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
