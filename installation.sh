@@ -60,7 +60,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S xorg-server xorg-drivers xorg-xinit
 
 echo "Выбираем DE"
-read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(lite): " de_setting
+read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(lite) 5 - I3: " de_setting
 if   [[ $de_setting == 1 ]]; then
   pacman -S xfce4 xfce4-goodies --noconfirm
 elif [[ $de_setting == 2 ]]; then
@@ -69,12 +69,23 @@ elif [[ $de_setting == 3 ]]; then
   pacman -S gnome gnome-extra --noconfirm
 elif [[ $de_setting == 4 ]]; then
   pacman -S plasma-desktop konsole plasma-nm plasma-pa packagekit-qt5 --noconfirm
+elif [[ $de_setting == 5 ]]; then
+  pacman -S i3 i3-wm i3status dmenu
 fi
 
 echo 'Выбираем DM'
-read -p "0 - Пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
+read -p "0 - пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
 if   [[ $dm_setting == 0 ]]; then
-  echo 'Пропущенно'
+cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+chown $username:users /home/$username/.xinitrc
+chmod +x /home/$username/.xinitrc
+sed -i 52,55d /home/$username/.xinitrc
+echo "exec i3 " >> /home/$username/.xinitrc
+mkdir /etc/systemd/system/getty@tty1.service.d/
+echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
 elif [[ $dm_setting == 1 ]]; then
   pacman -S lightdm lightdm-gtk-greeter-settings lightdm-gtk-greeter --noconfirm
   systemctl enable lightdm.service -f
