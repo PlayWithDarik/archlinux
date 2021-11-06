@@ -22,7 +22,7 @@ echo 'Создание разделов'
   echo;
   echo;
   echo;
-  echo +30G;
+  echo +35G;
 
   echo n;
   echo;
@@ -45,9 +45,9 @@ fdisk -l
 
 echo 'Форматирование дисков'
 mkfs.ext2  /dev/sda1 -L boot
-mkfs.ext4  /dev/sda2 -L root
+mkfs.btrfs  /dev/sda2 -L root
 mkswap /dev/sda3 -L swap
-mkfs.ext4  /dev/sda4 -L home
+mkfs.btrfs  /dev/sda4 -L home
 
 echo 'Монтирование дисков'
 mount /dev/sda2 /mnt
@@ -71,7 +71,7 @@ elif [[ $mirrors_setting == 5 ]]; then
 fi
 
 echo 'Установка основных пакетов'
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
+pacstrap /mnt base base-devel linux-zen linux-zen-headers zsh nano dhcpcd netctl btrfs-progs
 
 echo 'Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
