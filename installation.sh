@@ -74,7 +74,7 @@ elif [[ $de_setting == 5 ]]; then
 fi
 
 echo 'Выбираем DM'
-read -p "0 - пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
+read -p "0 - i3, 1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
 if   [[ $dm_setting == 0 ]]; then
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
 chown $username:users /home/$username/.xinitrc
