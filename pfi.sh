@@ -58,7 +58,6 @@ mount /dev/sda4 /mnt/home
 
 echo 'Новые зеркала для загрузки.'
 cat > /etc/pacman.d/mirrorlist <<EOF
-
 ##
 ## Arch Linux repository mirrorlist
 ## Generated on 2021-11-06
@@ -70,7 +69,6 @@ Server = https://repo.endpoint.ml/archlinux/\$repo/os/\$arch
 Server = https://archlinux.ip-connect.vn.ua/\$repo/os/\$arch
 Server = https://mirror.mirohost.net/archlinux/\$repo/os/\$arch
 Server = https://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch
-
 EOF
 
 echo 'Установка основных пакетов'
