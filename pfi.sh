@@ -56,7 +56,7 @@ mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
-echo 'Новые зеркала для загрузки.'
+echo 'Зеркала для загрузки.'
 cat > /etc/pacman.d/mirrorlist <<EOF
 ##
 ## Arch Linux repository mirrorlist
