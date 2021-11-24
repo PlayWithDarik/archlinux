@@ -57,7 +57,7 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo 'Ставим иксы и драйвера'
-pacman -S xorg xterm xorg-server xorg-drivers xorg-xinit xorg-apps xorg-xinput mesa
+pacman -S xorg xorg-server xorg-drivers xorg-xinit xorg-apps xorg-xinput mesa
 
 echo "Выбираем DE"
 read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(lite): " de_setting
@@ -84,7 +84,6 @@ elif [[ $dm_setting == 3 ]]; then
   pacman -S sddm sddm-kcm --noconfirm
   systemctl enable sddm.service -f
 fi
-
 
 echo 'Ставим AUR (yay)'
 read -p "1 - Да, 0 - Нет: " aur_install
