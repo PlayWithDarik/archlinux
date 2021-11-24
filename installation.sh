@@ -57,7 +57,7 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo 'Ставим иксы и драйвера'
-pacman -S xorg xorg-server xorg-drivers xorg-xinit xorg-apps xorg-xinput mesa
+pacman -S xorg-server xorg-drivers xorg-xinit
 
 echo "Выбираем DE"
 read -p "1 - XFCE, 2 - MATE, 3 - GNOME, 4 - KDE(lite): " de_setting
