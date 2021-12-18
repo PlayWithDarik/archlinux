@@ -15,3 +15,5 @@ aur - git.io/JD1Vs
 ```bash
    sudo pacman -Sy wget git.io/JD1Vs && sh JD1Vs
    ```
+### Спасибо: ###
+* [ordanax](https://github.com/ordanax)
