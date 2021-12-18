@@ -3,7 +3,8 @@
 This script install ArchLinux
 
 pfi - git.io/JtvPD |
-install - git.io/JtvPw
+install - git.io/JtvPw |
+aur - git.io/JD1Vs
 
 # Установка
  ```bash
