@@ -1,6 +1,6 @@
 # ArchLinux
 
-This script install ArchLinux
+Скрипт для установки ArchLinux
 
 pfi - git.io/JtvPD |
 install - git.io/JtvPw |
