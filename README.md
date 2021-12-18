@@ -17,3 +17,4 @@ aur - git.io/JD1Vs
    ```
 ### Спасибо: ###
 * [ordanax](https://github.com/ordanax)
+* [rickellis](https://github.com/rickellis)
