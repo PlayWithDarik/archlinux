@@ -70,7 +70,7 @@ elif [[ $de_setting == 3 ]]; then
 elif [[ $de_setting == 4 ]]; then
   pacman -S plasma-desktop konsole plasma-nm plasma-pa packagekit-qt5 --noconfirm
 elif [[ $de_setting == 5 ]]; then
-  pacman -S awesome --noconfirm
+  pacman -S awesome xterm --noconfirm
 fi
 
 echo 'Выбираем DM'
