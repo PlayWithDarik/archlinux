@@ -13,7 +13,8 @@ aur - git.io/JD1Vs
    ```
 # AUR
 ```bash
-   sudo pacman -Sy wget git.io/JD1Vs && sh JD1Vs
+   sudo pacman -Sy wget git
+   wget git.io/JD1Vs && sh JD1Vs
    ```
 ### Спасибо: ###
 * [ordanax](https://github.com/ordanax)
