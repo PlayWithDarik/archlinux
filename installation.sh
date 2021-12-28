@@ -74,9 +74,10 @@ elif [[ $de_setting == 5 ]]; then
 fi
 
 echo 'Выбираем DM'
-read -p "1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
- 
-if  [[ $dm_setting == 1 ]]; then
+read -p "0 - Пропустить, 1 - LIGHTDM, 2 - GDM, 3 - SDDM: " dm_setting
+if   [[ $dm_setting == 0 ]]; then
+  echo 'Пропущенно'
+elif [[ $dm_setting == 1 ]]; then
   pacman -S lightdm lightdm-gtk-greeter-settings lightdm-gtk-greeter --noconfirm
   systemctl enable lightdm.service -f
 elif [[ $dm_setting == 2 ]]; then
