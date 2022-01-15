@@ -16,19 +16,19 @@ echo 'Создание разделов'
   echo;
   echo;
   echo;
-  echo +512M;
+  echo +1024M;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +35G;
+  echo +45G;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +4096M;
+  echo +8192M;
 
   echo n;
   echo p;
