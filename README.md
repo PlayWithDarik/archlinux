@@ -17,7 +17,8 @@ aur - git.io/JD1Vs
    wget git.io/JD1Vs && sh JD1Vs
    ```
 # Это уничтожит безвозвратно все файлы на /dev/sdx
-```wipefs --all /dev/sdx   
+```bash
+   wipefs --all /dev/sdx   
    ```
 ### Спасибо: ###
 * [ordanax](https://github.com/ordanax)
