@@ -8,6 +8,9 @@ setfont cyr-sun16
 echo 'Синхронизация системных часов'
 timedatectl set-ntp true
 
+echo 'Форматирования диска'
+wipefs --all /dev/sda
+
 echo 'Создание разделов'
 (
   echo o;
@@ -60,7 +63,7 @@ echo 'Зеркала для загрузки.'
 cat > /etc/pacman.d/mirrorlist <<EOF
 ##
 ## Arch Linux repository mirrorlist
-## Generated on 2021-11-06
+## 
 ##
 
 ## Ukraine
