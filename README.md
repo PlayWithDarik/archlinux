@@ -16,10 +16,6 @@ aur - git.io/JD1Vs
    sudo pacman -Sy wget git
    wget git.io/JD1Vs && sh JD1Vs
    ```
-# Это уничтожит безвозвратно все файлы на /dev/sdx
-```bash
-   wipefs --all /dev/sdx   
-   ```
 ### Спасибо: ###
 * [ordanax](https://github.com/ordanax)
 * [rickellis](https://github.com/rickellis)
