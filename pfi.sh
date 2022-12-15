@@ -69,6 +69,7 @@ cat > /etc/pacman.d/mirrorlist <<EOF
 ## Ukraine
 Server = https://archlinux.astra.in.ua/\$repo/os/\$arch
 Server = https://repo.endpoint.ml/archlinux/\$repo/os/\$arch
+Server = https://fastmirror.pp.ua/archlinux/$repo/os/\$arch
 Server = https://archlinux.ip-connect.vn.ua/\$repo/os/\$arch
 Server = https://mirror.mirohost.net/archlinux/\$repo/os/\$arch
 Server = https://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch
