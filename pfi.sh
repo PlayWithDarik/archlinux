@@ -11,9 +11,6 @@ timedatectl set-ntp true
 echo 'Форматирования диска'
 wipefs --all /dev/sda
 
-echo 'BTRFS'
-pacman -S btrfs-progs
-
 echo 'Создание разделов'
 (
  echo g;
@@ -21,18 +18,9 @@ echo 'Создание разделов'
  echo n;
  echo ;
  echo;
- echo +300M;
- echo y;
- echo t;
- echo 1;
-
- echo n;
- echo;
- echo;
- echo +30G;
+ echo +4G;
  echo y;
  
-  
  echo n;
  echo;
  echo;
@@ -46,21 +34,17 @@ echo 'Ваша разметка диска'
 fdisk -l
 
 echo 'Форматирование дисков'
-mkfs.ext2 /dev/sda1
-mkswap /dev/sda2 
-mkfs.btrfs /dev/sda3
+mkswap /dev/sda1 
+mkfs.btrfs /dev/sda2
 
 echo 'Монтирование дисков'
-mount /dev/sda3 /mnt
-cd /mnt
-btrfs subvolume create ./@
-btrfs subvolume create ./@home
-swapon /dev/sda3
-cd
-umount /mnt -R
-mount -o rw,noatime,compress=zstd:3,ssd,ssd_spread,discard=async,space_cache=v2,subvol=/@ dev/sda3 /mnt
-mkdir /mnt/home
-mount -o rw,noatime,compress=zstd:3,ssd,ssd_spread,discard=async,space_cache=v2,subvol=/@home dev/sda3 /mnt/home
+swapon /dev/sda1
+mount /dev/sda2 /mnt
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home
+umount /mnt
+mount -o rw,noatime,compress=zstd:3,ssd,ssd_spread,discard=async,space_cache=v2,subvol=/@ dev/sda2 /mnt
+mount -o rw,noatime,compress=zstd:3,ssd,ssd_spread,discard=async,space_cache=v2,subvol=/@home dev/sda2 /mnt/home
 
 echo 'Зеркала для загрузки.'
 cat > /etc/pacman.d/mirrorlist <<EOF
