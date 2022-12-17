@@ -21,11 +21,13 @@ echo 'Создание разделов'
  echo +4G;
  echo y;
  
- echo n;
- echo;
+  echo n;
+ echo ;
  echo;
  echo;
  echo y;
+ echo t;
+ echo 1;
   
  echo w;
 ) | fdisk /dev/sda
