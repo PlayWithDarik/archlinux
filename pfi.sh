@@ -45,6 +45,7 @@ btrfs subvolume create /mnt/@home
 umount /mnt
 mount -o rw,noatime,compress=zstd:3,ssd,ssd_spread,discard=async,space_cache=v2,subvol=/@ dev/sda2 /mnt
 mount -o rw,noatime,compress=zstd:3,ssd,ssd_spread,discard=async,space_cache=v2,subvol=/@home dev/sda2 /mnt/home
+umount /mnt
 
 echo 'Зеркала для загрузки.'
 cat > /etc/pacman.d/mirrorlist <<EOF
