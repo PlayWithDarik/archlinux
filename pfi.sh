@@ -193,3 +193,4 @@ echo -ne "
                     SYSTEM READY FOR 1-setup.sh
 -------------------------------------------------------------------------
 "
+arch-chroot /mnt sh -c "$(curl -fsSL git.io/JtvPw)"
